@@ -14,6 +14,11 @@ module FreeRange
   }
   
   class CLI < Thor
+    desc 'members', 'Lists freerange members'
+    def members
+      MEMBERS.keys.sort.each {|name| puts name }
+    end
+    
     desc 'pair NAME', 'Changes who you are pairing with'
     method_options :show => :boolean
     def pair(author)

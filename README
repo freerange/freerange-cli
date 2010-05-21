@@ -1,0 +1,7 @@
+A very simple command line tool to make our development easier.  Currently with the following commands:
+
+freerange pair NAME - Starts pairing with the given member on the given project
+freerange unpair - Stop pairing
+freerange members - List all members
+
+There is also a zsh completion script under the zsh folder

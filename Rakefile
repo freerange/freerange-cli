@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "freerange-cli"
-  s.version           = "0.0.1"
+  s.version           = "0.0.6"
   s.summary           = "What this thing does"
   s.author            = "Tom Ward"
   s.email             = "tom@popdog.net"
