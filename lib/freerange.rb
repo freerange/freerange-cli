@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'thor'
 
-
 module FreeRange
   MEMBERS = {
     'james.adam' => 'James Adam',
@@ -14,6 +13,22 @@ module FreeRange
   }
   
   class CLI < Thor
+    class Pair
+      def initialize(pair)
+        @pair = pair
+        owner_name = `git config --global --get user.name`.strip
+        @owner = MEMBERS.keys.detect {|x| MEMBERS[x] == owner_name }
+      end
+
+      def name
+        [MEMBERS[@pair], MEMBERS[@owner]].sort.join(" & ")
+      end
+
+      def email
+        [@owner, @pair].sort.join('+') + "+pairing@gofreerange.com"
+      end
+    end
+
     desc 'members', 'Lists freerange members'
     def members
       MEMBERS.keys.sort.each {|name| puts name }
@@ -22,17 +37,25 @@ module FreeRange
     desc 'pair NAME', 'Changes who you are pairing with'
     method_options :show => :boolean
     def pair(author)
-      owner_name = `git config --global --get user.name`.strip
-      owner = MEMBERS.keys.detect {|x| MEMBERS[x] == owner_name }
-      pair = [MEMBERS[owner], MEMBERS[author]].sort
-      `git config user.name '#{pair.join(" & ")}'`
-      `git config user.email '#{[owner,author].sort.join('+')}+pairing@gofreerange.com'`
+      p = Pair.new(author)
+      set 'user.name' => p.name, 'user.email' => p.email
     end
     
     desc 'unpair', 'Stop pairing'
     def unpair
-      `git config --unset user.name`
-      `git config --unset user.email`
+      unset 'user.name', 'user.email'
+    end
+
+    private
+
+    def set(options = {})
+      options.each do |key, value|
+        `git config #{key} '#{value}'`
+      end
+    end
+
+    def unset(*options)
+      options.each {|o| `git config --unset #{o}`}
     end
   end
 end

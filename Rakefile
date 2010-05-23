@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "freerange-cli"
-  s.version           = "0.0.6"
+  s.version           = "0.0.7"
   s.summary           = "What this thing does"
   s.author            = "Tom Ward"
   s.email             = "tom@popdog.net"
@@ -76,7 +76,6 @@ task :package => :gemspec
 
 # Generate documentation
 Rake::RDocTask.new do |rd|
-  
   rd.rdoc_files.include("lib/**/*.rb")
   rd.rdoc_dir = "rdoc"
 end
