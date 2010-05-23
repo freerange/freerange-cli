@@ -2,22 +2,27 @@
 
 Gem::Specification.new do |s|
   s.name = %q{freerange-cli}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tom Ward"]
-  s.date = %q{2010-05-21}
+  s.date = %q{2010-05-23}
   s.default_executable = %q{freerange}
-  s.email = %q{tom@popdog.net}
+  s.email = %q{tom.ward@gofreerange.com}
   s.executables = ["freerange"]
   s.files = [
+    ".gitignore",
+    "README",
+    "Rakefile",
+    "bin/freerange",
+    "freerange-cli.gemspec",
     "lib/freerange.rb",
-    "bin/freerange"
+    "zsh/_freerange"
   ]
   s.homepage = %q{http://gofreerange.com}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{What this thing does}
+  s.summary = %q{Simple commands to help with Freerange}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
