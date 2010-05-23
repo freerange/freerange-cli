@@ -17,10 +17,10 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "freerange-cli"
-  s.version           = "0.0.7"
-  s.summary           = "What this thing does"
+  s.version           = "0.0.8"
+  s.summary           = "Simple commands to help with Freerange"
   s.author            = "Tom Ward"
-  s.email             = "tom@popdog.net"
+  s.email             = "tom.ward@gofreerange.com"
   s.homepage          = "http://gofreerange.com"
 
   s.has_rdoc          = true
@@ -30,7 +30,7 @@ spec = Gem::Specification.new do |s|
   # s.rdoc_options      = %w(--main README)
 
   # Add any extra files to include in the gem (like your README)
-  s.files             = Dir.glob("{lib/**/*}")
+  s.files             = `git ls-files`.split("\n").sort
   s.require_paths     = ["lib"]
   
   s.executables       = FileList["bin/**"].map { |f| File.basename(f) }
