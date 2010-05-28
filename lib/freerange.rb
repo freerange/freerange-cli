@@ -18,6 +18,7 @@ module FreeRange
         @pair = pair
         owner_name = `git config --global --get user.name`.strip
         @owner = MEMBERS.keys.detect {|x| MEMBERS[x] == owner_name }
+        raise "You can't pair with yourself." if @pair == @owner
       end
 
       def name
@@ -39,6 +40,9 @@ module FreeRange
     def pair(author)
       p = Pair.new(author)
       set 'user.name' => p.name, 'user.email' => p.email
+    rescue => e
+      puts e.message
+      exit -1
     end
     
     desc 'unpair', 'Stop pairing'
