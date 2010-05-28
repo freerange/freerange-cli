@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "freerange-cli"
-  s.version           = "0.0.9"
+  s.version           = "0.0.10"
   s.summary           = "Simple commands to help with Freerange"
   s.author            = "Tom Ward"
   s.email             = "tom.ward@gofreerange.com"
@@ -85,6 +85,7 @@ task :clean => [:clobber_rdoc, :clobber_package] do
   rm "#{spec.name}.gemspec"
 end
 
+desc 'Release the gem to gemcutter and tag the repo'
 task :release => [:gemspec, :package] do
   if `git diff --cached`.empty?
     if `git tag`.split("\n").include?("v#{spec.version}")

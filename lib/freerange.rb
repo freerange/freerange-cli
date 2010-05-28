@@ -25,7 +25,7 @@ module FreeRange
       end
 
       def email
-        [@owner, @pair].sort.join('+') + "+pairing@gofreerange.com"
+        "pairing+" + [@owner, @pair].sort.join('+') + "@gofreerange.com"
       end
     end
 
