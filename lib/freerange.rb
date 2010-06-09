@@ -28,6 +28,10 @@ module FreeRange
       def email
         "pairing+" + [@owner, @pair].sort.join('+') + "@gofreerange.com"
       end
+
+      def initials
+        @pair.split(".").collect {|p| p[0..0]}.join
+      end
     end
 
     desc 'members', 'Lists freerange members'
@@ -39,15 +43,15 @@ module FreeRange
     method_options :show => :boolean
     def pair(author)
       p = Pair.new(author)
-      set 'user.name' => p.name, 'user.email' => p.email
+      set 'user.name' => p.name, 'user.email' => p.email, 'pair.initials' => p.initials
     rescue => e
       puts e.message
-      exit -1
+      exit(-1)
     end
     
     desc 'unpair', 'Stop pairing'
     def unpair
-      unset 'user.name', 'user.email'
+      unset 'user.name', 'user.email', 'pair.initials'
     end
 
     private
