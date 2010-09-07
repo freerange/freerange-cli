@@ -3,6 +3,7 @@ require 'thor'
 
 module FreeRange
   MEMBERS = {
+    'chris.roos' => 'Chris Roos',
     'james.adam' => 'James Adam',
     'james.andrews' => 'James Andrews',
     'james.mead' => 'James Mead',
