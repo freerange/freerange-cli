@@ -8,7 +8,10 @@ module FreeRange
     'james.mead' => 'James Mead',
     'jason.cale' => 'Jason Cale',
     'kalvir.sandhu' => 'Kalvir Sandhu',
-    'tom.ward' => 'Tom Ward'
+    'tom.ward' => 'Tom Ward',
+    'zhao.lu' => 'Zhao Lu',
+    'kevin.prince' => 'Kevin Prince',
+    'richard.spence' => 'Richard Spence'
   }
   
   class CLI < Thor
