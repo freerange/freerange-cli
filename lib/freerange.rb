@@ -11,7 +11,8 @@ module FreeRange
     'tom.ward' => 'Tom Ward',
     'zhao.lu' => 'Zhao Lu',
     'kevin.prince' => 'Kevin Prince',
-    'richard.spence' => 'Richard Spence'
+    'richard.spence' => 'Richard Spence',
+    'tom.stuart' => 'Tom Stuart'
   }
   
   class CLI < Thor

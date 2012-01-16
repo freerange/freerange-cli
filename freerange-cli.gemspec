@@ -1,27 +1,27 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{freerange-cli}
-  s.version = "0.0.14"
+  s.name = "freerange-cli"
+  s.version = "0.0.15"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Tom Ward}]
-  s.date = %q{2011-06-28}
-  s.email = %q{tom.ward@gofreerange.com}
-  s.executables = [%q{freerange}]
+  s.authors = ["Tom Ward"]
+  s.date = "2012-01-16"
+  s.email = "tom.ward@gofreerange.com"
+  s.executables = ["freerange"]
   s.files = [
-    %q{.gitignore},
-    %q{README},
-    %q{Rakefile},
-    %q{bin/freerange},
-    %q{freerange-cli.gemspec},
-    %q{lib/freerange.rb},
-    %q{zsh/_freerange}
+    ".gitignore",
+    "README",
+    "Rakefile",
+    "bin/freerange",
+    "freerange-cli.gemspec",
+    "lib/freerange.rb",
+    "zsh/_freerange"
   ]
-  s.homepage = %q{http://gofreerange.com}
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.5}
-  s.summary = %q{Simple commands to help with Freerange}
+  s.homepage = "http://gofreerange.com"
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.10"
+  s.summary = "Simple commands to help with Freerange"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
